@@ -1,0 +1,29 @@
+{
+  "name": "first-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/03-01-0v0/Node-Js.git"
+  },
+  "keywords": [
+    "node-js",
+    "03-01-0v0"
+  ],
+  "author": "03-01-0v0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/03-01-0v0/Node-Js/issues"
+  },
+  "homepage": "https://github.com/03-01-0v0/Node-Js#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
+    "yargs": "^17.5.1"
+  }
+}
