@@ -1,37 +1,8 @@
 /** @format */
 
-const express = require('express');
-const app = express();
-const port = 3000;
+console.log('Hello');
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
-});
-
-app.get('/help', (req, res) => {
-  res.send({
-    name: 'Tuananh',
-    age: '22',
-  });
-});
-
-app.get('/about', (req, res) => {
-  res.send([
-    {
-      name: 'Tuananh',
-      age: '22',
-    },
-    {
-      name: 'SonDinh',
-      age: '23',
-    },
-  ]);
-});
-
-app.get('/weather', (req, res) => {
-  res.send('Weather page');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));

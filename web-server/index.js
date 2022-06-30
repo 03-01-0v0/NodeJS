@@ -30,7 +30,7 @@ app.get('/weather', (req, res) => {
       error: 'You must provide an address',
     });
   }
-  geocode(req.query.address, (err, data) => {
+  geocode(req.query.address, (err, data = {}) => {
     if (err) {
       return res.send({ err });
     } else {
@@ -70,10 +70,6 @@ app.get('/help', (req, res) => {
     title: 'Help',
     name: 'Tuan Anh',
   });
-});
-
-app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>');
 });
 
 app.get('/help', (req, res) => {
