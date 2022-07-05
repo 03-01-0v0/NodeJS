@@ -1,17 +1,15 @@
-/** @format */
+const express = require('express')
+require('./db/mongoose')
+const userRouter = require('./routers/user')
+const taskRouter = require('./routers/task')
 
-const express = require('express');
-require('./db/mongoose');
-const routerUser = require('./routers/user');
-const routerTask = require('./routers/task');
+const app = express()
+const port = process.env.PORT || 3000
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.use(express.json());
-app.use(routerUser);
-app.use(routerTask);
+app.use(express.json())
+app.use(userRouter)
+app.use(taskRouter)
 
 app.listen(port, () => {
-  console.log('Server is up on port ' + port);
-});
+    console.log('Server is up on port ' + port)
+})
